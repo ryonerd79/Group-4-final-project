@@ -1,11 +1,9 @@
 import './App.css';
-import Dashboard from './pages/Dashboard';
+import MainContentContainer from './components/MainContent';
 
 function App() {
   return ( 
-    
-   <Dashboard/>
-
+   <MainContentContainer/>
   );
 }
 
