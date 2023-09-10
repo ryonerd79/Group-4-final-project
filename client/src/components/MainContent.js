@@ -7,7 +7,7 @@ import Header from './Header';
 import Navigation from './Navigation';
 
 export default function MainContentContainer() {
-  const [currentPage, setCurrentPage] = useState("Signup");
+  const [currentPage, setCurrentPage] = useState("About");
 
   const renderPage = () => {
     if (currentPage === "About") {
