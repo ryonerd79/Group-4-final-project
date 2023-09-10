@@ -1,48 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-export default function Navigation({ currentPage, handlePageChange }) {
+function Navigation({page, setPage}) {
   return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-        <a
-          href="#about"
-          onClick={() => handlePageChange("About")}
-          className={currentPage === "About" ? "active" : ""}
-          id="aboutId"
-        >
-          About me
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#contact"
-          onClick={() => handlePageChange("Contact")}
-          className={currentPage === "Contact" ? "active" : ""}
-          id="contactId"
-        >
-          Contact
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#signup"
-          onClick={() => handlePageChange("Signup")}
-          className={currentPage === "Signup" ? "active" : ""}
-          id="signupId"
-        >
-          Signup
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#login"
-          onClick={() => handlePageChange("Login")}
-          className={currentPage === "Login" ? "active" : ""}
-          id="loginId"
-        >
-          Login
-        </a>
-      </li>
-    </ul>
-  );
+    <nav>
+     <a href="#" onClick={() => setPage('')} className={page===''?'active':''}>About</a>
+     <a href="#" onClick={() => setPage('portfolio')} className={page==='students'?'active':''}>Students</a>
+     <a href="#" onClick={() => setPage('contact')} className={page==='parents'?'active':''}>Parents </a>
+     <a href="#" onClick={() => setPage('resume')} className={page==='teachers'?'active':''}>Teachers</a>
+    </nav>
+  )
 }
+
+export default Navigation
