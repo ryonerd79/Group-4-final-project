@@ -3,7 +3,7 @@ import About from '../pages/About';
 import Signup from '../pages/Signup';
 import Login from '../pages/Login';
 import Contact from '../pages/Contact';
-import Header from './Header';
+import Head from './Head';
 import Nav from './Nav';
 
 export default function MainContentContainer() {
@@ -26,7 +26,7 @@ export default function MainContentContainer() {
 
   return (
     <main>
-      <Header />
+      <Head />
       <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
     </main>
