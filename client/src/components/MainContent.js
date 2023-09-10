@@ -4,7 +4,7 @@ import Signup from '../pages/Signup';
 import Login from '../pages/Login';
 import Contact from '../pages/Contact';
 import Header from './Header';
-import Navigation from './Navigations';
+import Nav from './Nav';
 
 export default function MainContentContainer() {
   const [currentPage, setCurrentPage] = useState("About");
@@ -27,7 +27,7 @@ export default function MainContentContainer() {
   return (
     <main>
       <Header />
-      <Navigation currentPage={currentPage} handlePageChange={handlePageChange} />
+      <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
     </main>
   );
