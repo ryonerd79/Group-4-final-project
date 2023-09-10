@@ -3,11 +3,11 @@ import About from '../pages/About';
 import Signup from '../pages/Signup';
 import Login from '../pages/Login';
 import Contact from '../pages/Contact';
-import Header from './Header';
-import Navigation from './Navigation';
+import Head from './Head';
+import Nav from './Nav';
 
 export default function MainContentContainer() {
-  const [currentPage, setCurrentPage] = useState("Signup");
+  const [currentPage, setCurrentPage] = useState("About");
 
   const renderPage = () => {
     if (currentPage === "About") {
@@ -26,8 +26,8 @@ export default function MainContentContainer() {
 
   return (
     <main>
-      <Header />
-      <Navigation currentPage={currentPage} handlePageChange={handlePageChange} />
+      <Head />
+      <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
     </main>
   );
