@@ -1,14 +1,73 @@
-import React from 'react'
+import React from 'react';
+import Auth from '../utils/auth';
 
-function Navigation({page, setPage}) {
+export default function Navigation({ currentPage, handlePageChange }) {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   return (
-    <nav>
-     <a href="#" onClick={() => setPage('')} className={page===''?'active':''}>About</a>
-     <a href="#" onClick={() => setPage('portfolio')} className={page==='students'?'active':''}>Students</a>
-     <a href="#" onClick={() => setPage('contact')} className={page==='parents'?'active':''}>Parents </a>
-     <a href="#" onClick={() => setPage('resume')} className={page==='teachers'?'active':''}>Teachers</a>
-    </nav>
-  )
-}
+    <ul className="nav nav-tabs">
+      <li className="nav-item">
+        <a
+          href="#about"
+          onClick={() => handlePageChange("About")}
+          className={currentPage === "About" ? "active" : ""}
+          id="aboutId"
+        >
+          About Us
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          href="#contact"
+          onClick={() => handlePageChange("Contact")}
+          className={currentPage === "Contact" ? "active" : ""}
+          id="contactId"
+        >
+          Contact
+        </a>
+      </li>
 
-export default Navigation
+      {Auth.loggedIn() ? (
+        <li className="nav-item">
+          <a
+            href="#about"
+            onClick={logout}
+            className={currentPage === "Login" ? "active" : ""}
+            id="aboutId"
+          >
+            Logout
+          </a>
+        </li>
+      ) : (
+        <li className="nav-item">
+          <a
+            href="#login"
+            onClick={() => handlePageChange("Login")}
+            className={currentPage === "Login" ? "active" : ""}
+            id="loginId"
+          >
+            Login
+          </a>
+        </li>
+      )}
+
+      {Auth.loggedIn() ? (
+        <div></div>
+      ) : (
+        <li className="nav-item">
+          <a
+            href="#signup"
+            onClick={() => handlePageChange("Signup")}
+            className={currentPage === "Signup" ? "active" : ""}
+            id="signupId"
+          >
+            Signup
+          </a>
+        </li>
+      )}
+    </ul>
+  );
+}
