@@ -16,7 +16,7 @@ export default function Navigation({ currentPage, handlePageChange }) {
           className={currentPage === "About" ? "active" : ""}
           id="aboutId"
         >
-          About Us
+          About Us!
         </a>
       </li>
       <li className="nav-item">

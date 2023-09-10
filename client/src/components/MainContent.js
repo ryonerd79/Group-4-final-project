@@ -4,7 +4,7 @@ import Signup from '../pages/Signup';
 import Login from '../pages/Login';
 import Contact from '../pages/Contact';
 import Header from './Header';
-import Navigation from './Navigation';
+import Navigation from './Navigations';
 
 export default function MainContentContainer() {
   const [currentPage, setCurrentPage] = useState("About");
