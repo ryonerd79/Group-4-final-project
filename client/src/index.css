@@ -15,11 +15,11 @@ code {
 #aboutId,
 #contactId,
 #signupId,
-#loginId {
+#loginId,
+#homeId {
   text-decoration: none;
   color:black;
 }
-
 
 .header {
   display: flex;
@@ -34,4 +34,19 @@ code {
   list-style: none;
   padding: 0;
   text-align: center;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 800px) {
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.error-msg {
+  padding-top: 30px;
 }

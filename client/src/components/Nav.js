@@ -9,6 +9,16 @@ export default function Navigation({ currentPage, handlePageChange }) {
 
   return (
     <ul className="nav nav-tabs">
+       <li className="nav-item">
+        <a
+          href="#home"
+          onClick={() => handlePageChange("Home")}
+          className={currentPage === "Home" ? "active" : ""}
+          id="homeId"
+        >
+          Home
+        </a>
+      </li>
       <li className="nav-item">
         <a
           href="#about"
@@ -16,21 +26,35 @@ export default function Navigation({ currentPage, handlePageChange }) {
           className={currentPage === "About" ? "active" : ""}
           id="aboutId"
         >
-          About Us!
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#contact"
-          onClick={() => handlePageChange("Contact")}
-          className={currentPage === "Contact" ? "active" : ""}
-          id="contactId"
-        >
-          Contact
+          About Us
         </a>
       </li>
 
       {Auth.loggedIn() ? (
+       <li className="nav-item">
+       <a
+         href="#contact"
+         onClick={() => handlePageChange("Contact")}
+         className={currentPage === "Contact" ? "active" : ""}
+         id="contactId"
+       >
+         Contact
+       </a>
+     </li>
+      ) : (
+        <li className="nav-item">
+          <a
+            href="#signup"
+            onClick={() => handlePageChange("Signup")}
+            className={currentPage === "Signup" ? "active" : ""}
+            id="signupId"
+          >
+            Signup
+          </a>
+        </li>
+      )}
+
+{Auth.loggedIn() ? (
         <li className="nav-item">
           <a
             href="#about"
@@ -50,21 +74,6 @@ export default function Navigation({ currentPage, handlePageChange }) {
             id="loginId"
           >
             Login
-          </a>
-        </li>
-      )}
-
-      {Auth.loggedIn() ? (
-        <div></div>
-      ) : (
-        <li className="nav-item">
-          <a
-            href="#signup"
-            onClick={() => handlePageChange("Signup")}
-            className={currentPage === "Signup" ? "active" : ""}
-            id="signupId"
-          >
-            Signup
           </a>
         </li>
       )}

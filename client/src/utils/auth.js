@@ -29,13 +29,17 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
+    setTimeout(() => {
     window.location.assign('/');
+    }, 3000);
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.reload();
+      window.location.reload();
+
   }
 }
 
-export default new AuthService();
+const authServiceInstance = new AuthService();
+export default authServiceInstance;
