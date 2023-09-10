@@ -13,9 +13,9 @@ code {
 }
 
 #aboutId,
-#portfolioId,
 #contactId,
-#resumeId {
+#signupId,
+#loginId {
   text-decoration: none;
   color:black;
 }
