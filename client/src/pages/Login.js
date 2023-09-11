@@ -31,7 +31,6 @@ const Login = (props) => {
       console.error(e);
     }
 
-    // clear form values
     setFormState({
       email: '',
       password: '',
@@ -39,15 +38,13 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="">Login</h4>
-          <div className="card-body">
+    <main className="form-container">
+      <div className="form-content">
+        <div className="form-group">
+          <h4 className="login-text">Login</h4>
+          <div className="form-group">
             {data ? (
-              <p>
-                Success! You are now signed in!{' '}
-              </p>
+              <p>Success! You are now signed in!</p>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
@@ -67,7 +64,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="form-submit-button"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -75,9 +72,9 @@ const Login = (props) => {
                 </button>
               </form>
             )}
-
+  
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className="form-group error-msg" >
                 {error.message}
               </div>
             )}
@@ -86,6 +83,7 @@ const Login = (props) => {
       </div>
     </main>
   );
+  
 };
 
 export default Login;

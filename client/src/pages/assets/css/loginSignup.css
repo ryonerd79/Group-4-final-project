@@ -1,0 +1,40 @@
+.form-content {
+    border: 7px solid darkgrey;
+    padding: 20px;
+    max-width: 300px;
+    width: 100%;
+    background-color: deepskyblue;
+    box-shadow: 10px 10px 10px grey;
+    border-radius: 75px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+
+.form-submit-button, .login-text, .signup-text {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-text, .signup-text {
+  padding: 30px 0px;
+  font-size: 150%;
+}
+
+
+
+
+  
