@@ -50,3 +50,7 @@ code {
 .error-msg {
   padding-top: 30px;
 }
+
+.background-img {
+  background-image: url('../src/assets/home.png')
+}

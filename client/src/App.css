@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add this CSS to style the home image and text positioning */
+.nav-img-alignment {
+  text-align: center; /* Center the image and text horizontally */
+}
+
+.home-image
+.about-image
+.signup-image
+.login-image {
+  max-width: 50px;
+  display: block;
+  margin: 0 auto 5px;
+}
