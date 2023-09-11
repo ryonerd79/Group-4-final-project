@@ -16,7 +16,8 @@ code {
 #contactId,
 #signupId,
 #loginId,
-#homeId {
+#homeId,
+#logoutId {
   text-decoration: none;
   color:black;
 }
@@ -38,6 +39,13 @@ code {
 
 .nav-item {
   margin-bottom: 10px;
+  padding: 20px;
+}
+
+.nav-item:hover {
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 @media (min-width: 800px) {
@@ -51,6 +59,20 @@ code {
   padding-top: 30px;
 }
 
-.background-img {
-  background-image: url('../src/assets/home.png')
+#aboutId.active,
+#contactId.active,
+#signupId.active,
+#loginId.active,
+#homeId.active,
+#logoutId.active {
+  text-decoration: underline deepskyblue solid 5px;
+}
+
+body {
+  background-image: url('./assets/oliaDanilevichPhoto.jpg');
+  background-size: cover;
+}
+
+.header {
+  text-decoration: underline 5px black;
 }

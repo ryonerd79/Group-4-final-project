@@ -22,8 +22,8 @@ export default function Navigation({ currentPage, handlePageChange }) {
           className={currentPage === "Home" ? "active" : ""}
           id="homeId"
         >
-          <div className='nav-img-alignment'>
-            <img src={home} alt="" className="home-image" />
+          <div>
+            <img src={home} alt="Link to home page"/>
           </div>
           Home
         </a>
@@ -35,8 +35,8 @@ export default function Navigation({ currentPage, handlePageChange }) {
           className={currentPage === "About" ? "active" : ""}
           id="aboutId"
         > 
-          <div className='nav-img-alignment'>
-            <img src={about} alt="" className="about-image" />
+          <div>
+            <img src={about} alt="Link to about us page"/>
           </div>
           About Us
         </a>
@@ -49,8 +49,8 @@ export default function Navigation({ currentPage, handlePageChange }) {
             className={currentPage === "Contact" ? "active" : ""}
             id="contactId"
           >
-            <div className='nav-img-alignment'>
-              <img src={contact} alt="" className="contact-image" />
+            <div>
+              <img src={contact} alt="Link to contact us page"/>
             </div>
             Contact
           </a>
@@ -63,8 +63,8 @@ export default function Navigation({ currentPage, handlePageChange }) {
             className={currentPage === "Signup" ? "active" : ""}
             id="signupId"
           >
-            <div className='nav-img-alignment'>
-              <img src={signup} alt="" className="signup-image" />
+            <div>
+              <img src={signup} alt="Link to sign up page"/>
             </div>
             Signup
           </a>
@@ -78,8 +78,8 @@ export default function Navigation({ currentPage, handlePageChange }) {
             className={currentPage === "Login" ? "active" : ""}
             id="aboutId"
           >
-            <div className='nav-img-alignment'>
-              <img src={logoutImg} alt="" className="logout-image" />
+            <div>
+              <img src={logoutImg} alt="Link to logout us page"/>
             </div>
             Logout
           </a>
@@ -92,8 +92,8 @@ export default function Navigation({ currentPage, handlePageChange }) {
             className={currentPage === "Login" ? "active" : ""}
             id="loginId"
           >
-            <div className='nav-img-alignment'>
-              <img src={login} alt="" className="login-image" />
+            <div>
+              <img src={login} alt="Link to login page"/>
             </div>
             Login
           </a>
