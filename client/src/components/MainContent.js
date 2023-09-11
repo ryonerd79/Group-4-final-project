@@ -30,8 +30,10 @@ export default function MainContentContainer() {
 
   return (
     <main>
-      <Header />
-      <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
+      <div class='header-nav'>
+        <Header />
+        <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
+      </div>
       {renderPage()}
     </main>
   );
