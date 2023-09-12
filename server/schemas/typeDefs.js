@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    isTeacher: Boolean
   }
 
   type Auth {
@@ -19,7 +20,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!, isTeacher: Boolean!): Auth
     login(email: String!, password: String!): Auth
   }
 `;
