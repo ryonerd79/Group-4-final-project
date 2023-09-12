@@ -2,5 +2,10 @@
     {
       "postText": "Hi Mrs. Lee. My son Jake is struggling with some math problems",
       "postAuthor": "Brian Kernighan"
-    }
+    },
+
+    {
+        "postText": "Hi Mr. Roberts. My daughter Kelly is really enjoying your reading class",
+        "postAuthor": "Sarah Naoki"
+      }
 ]
