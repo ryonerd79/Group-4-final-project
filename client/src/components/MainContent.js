@@ -5,7 +5,7 @@ import Login from '../pages/Login';
 import Contact from '../pages/Contact';
 import Header from './Header'
 import Nav from './Nav';
-import Home from '../pages/Home'
+import Home from '../pages/Parents'
 
 export default function MainContentContainer() {
   const [currentPage, setCurrentPage] = useState("Home");
