@@ -83,9 +83,9 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
-                <label>
-                Are you a teacher or parent?
+                <div className="form-group is-teacher-checkbox">
+                <label className="is-teacher-checkbox">
+                Indicate if you're a teacher by checking the box:
                 <input
                     className="form-checkbox"
                     name="isTeacher"

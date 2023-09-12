@@ -76,3 +76,8 @@ body {
 .header {
   text-decoration: underline 5px black;
 }
+
+.is-teacher-checkbox {
+  text-align: center;
+  display: block;
+}
