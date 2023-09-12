@@ -21,8 +21,9 @@ const userSchema = new Schema({
   },
   isTeacher: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
+
 });
 
 userSchema.pre('save', async function (next) {
