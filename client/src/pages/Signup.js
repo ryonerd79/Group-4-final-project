@@ -2,23 +2,31 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import './assets/css/loginSignup.css'
+import './assets/css/loginSignup.css';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
     email: '',
     password: '',
+    isTeacher: false,
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    if (type === 'checkbox') {
+      setFormState({
+        ...formState,
+        [name]: checked,
+      });
+    } else {
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    }
   };
 
   const handleFormSubmit = async (event) => {
@@ -51,7 +59,7 @@ const Signup = () => {
                     placeholder="Your username"
                     name="username"
                     type="text"
-                    value={formState.name}
+                    value={formState.username}
                     onChange={handleChange}
                   />
                 </div>
@@ -74,6 +82,18 @@ const Signup = () => {
                     value={formState.password}
                     onChange={handleChange}
                   />
+                </div>
+                <div className="form-group is-teacher-checkbox">
+                <label className="is-teacher-checkbox">
+                Indicate if you're a teacher by checking the box:
+                <input
+                    className="form-checkbox"
+                    name="isTeacher"
+                    type="checkbox"
+                    checked={formState.isTeacher}
+                    onChange={handleChange}
+                  />
+                </label>
                 </div>
                 <button
                   className="form-submit-button"
