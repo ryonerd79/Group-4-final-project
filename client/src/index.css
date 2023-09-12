@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#aboutId,
+#contactId,
+#signupId,
+#loginId,
+#homeId,
+#logoutId {
+  text-decoration: none;
+  color:black;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  list-style-type: none;
+  text-align: center;
+  width: 100%; 
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.nav-item:hover {
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+@media (min-width: 800px) {
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.error-msg {
+  padding-top: 30px;
+}
+
+#aboutId.active,
+#contactId.active,
+#signupId.active,
+#loginId.active,
+#homeId.active,
+#logoutId.active {
+  text-decoration: underline deepskyblue solid 5px;
+}
+
+body {
+  background-image: url('./assets/oliaDanilevichPhoto.jpg');
+  background-size: cover;
+}
+
+.header {
+  text-decoration: underline 5px black;
+}
