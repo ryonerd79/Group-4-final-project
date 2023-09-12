@@ -30,7 +30,7 @@ export default function MainContentContainer() {
 
   return (
     <main>
-      <div class='header-nav'>
+      <div className='header-nav'>
         <Header />
         <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
       </div>
