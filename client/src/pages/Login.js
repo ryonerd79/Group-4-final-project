@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -43,7 +44,9 @@ const Login = (props) => {
           <h4 className="login-text">Login</h4>
           <div className="form-group">
             {data ? (
-              <p>Success! You are now signed in!</p>
+              <p>Success! You are now signed in! You may now head{' '}
+              <Link to="/">back to the homepage.</Link>
+              </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input

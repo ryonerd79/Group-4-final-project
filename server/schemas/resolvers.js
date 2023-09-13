@@ -5,22 +5,23 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find().populate('announcements');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username })
+      return User.findOne({ username }).populate('announcements');
     },
-    announcements: async () => {
-      return Announcement.find().sort({ createdAt: -1 });
+    announcements: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Announcement.find(params).sort({ createdAt: -1 });
     },
-    announcement: async (parent, { id }) => {
-      const announcement = await Announcement.findById(id);
-  
-      if (!announcement) {
-        throw new Error('Announcement not found');
+    announcement: async (parent, { announcementId }) => {
+      return Announcement.findOne({ _id: announcementId });
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate('announcements');
       }
-  
-      return announcement;
+      throw new AuthenticationError('You need to be logged in!');
     },
   },
 
@@ -47,25 +48,72 @@ const resolvers = {
 
       return { token, user };
     },
-    createAnnouncement: async (parent, { content }, context) => {
-      // Check if the user is authenticated
-      if (!context.user) {
-        throw new AuthenticationError('You must be logged in to create an announcement');
+    addAnnouncement: async (parent, { announcementText }, context) => {
+      if (context.user) {
+        const announcement = await Announcement.create({
+          announcementText,
+          announcementAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { announcements: announcement._id } }
+        );
+
+        return announcement;
       }
-  
-      // Create the announcement with the authenticated user's ID
-      const announcement = new Announcement({
-        content,
-        createdBy: context.user._id, // Access user's ID from context
-      });
-  
-      // Save the announcement to the database
-      await announcement.save();
-  
-      // Return the created announcement
-      return announcement;
+      throw new AuthenticationError('You need to be logged in!');
     },
-  
+    addComment: async (parent, { announcementId, commentText }, context) => {
+      if (context.user) {
+        return Announcement.findOneAndUpdate(
+          { _id: announcementId },
+          {
+            $addToSet: {
+              comments: { commentText, commentAuthor: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeAnnouncement: async (parent, { announcementId }, context) => {
+      if (context.user) {
+        const announcement = await Announcement.findOneAndDelete({
+          _id: announcementId,
+          announcementAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { announcements: announcement._id } }
+        );
+
+        return announcement;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeComment: async (parent, { announcementId, commentId }, context) => {
+      if (context.user) {
+        return Announcement.findOneAndUpdate(
+          { _id: announcementId },
+          {
+            $pull: {
+              comments: {
+                _id: commentId,
+                commentAuthor: context.user.username,
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 
