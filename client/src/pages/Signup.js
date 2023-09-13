@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 import './assets/css/loginSignup.css';
 
@@ -50,7 +51,10 @@ const Signup = () => {
           <h4 className="signup-text">Sign Up</h4>
           <div className="form-inner">
             {data ? (
-              <p>Success! You may now head</p>
+              <p>
+               Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+                </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <div className="form-group">

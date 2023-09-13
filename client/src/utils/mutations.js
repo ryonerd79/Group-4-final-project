@@ -24,3 +24,34 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_ANNOUNCEMENT = gql`
+  mutation addAnnouncement($announcementText: String!) {
+    addAnnouncement(announcementText: $announcementText) {
+      _id
+      announcementText
+      announcementAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($announcementId: ID!, $commentText: String!) {
+    addComment(announcementId: $announcementId, commentText: $commentText) {
+      _id
+      announcementText
+      announcementAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;

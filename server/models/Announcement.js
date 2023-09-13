@@ -1,12 +1,12 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const AnnouncementSchema = new Schema({
+const announcementSchema = new Schema({
   announcementText: {
     type: String,
     required: 'You need to post an announcement!',
     minlength: 1,
-    maxlength: 280,
+    maxlength: 350,
     trim: true,
   },
   announcementAuthor: {
@@ -40,6 +40,6 @@ const AnnouncementSchema = new Schema({
   ],
 });
 
-const Announcement = model('Announcement', AnnouncementSchema);
+const Announcement = model('Announcement', announcementSchema);
 
 module.exports = Announcement;

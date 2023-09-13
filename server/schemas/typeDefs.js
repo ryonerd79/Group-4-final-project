@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    announcements: [Announcement]!
     isTeacher: Boolean
   }
 
@@ -33,14 +34,18 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    announcements: [Announcement!]!
-    announcement(id: ID!): Announcement
+    announcements(username: String): [Announcement]
+    announcement(announcementId: ID!): Announcement
+    me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!, isTeacher: Boolean!): Auth
     login(email: String!, password: String!): Auth
-    createAnnouncement(content: String!): Announcement
+    addAnnouncement(announcementText: String!): Announcement
+    addComment(announcementId: ID!, commentText: String!): Announcement
+    removeAnnouncement(announcementId: ID!): Announcement
+    removeComment(announcementId: ID!, commentId: ID!): Announcement
   }
 `;
 

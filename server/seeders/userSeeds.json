@@ -1,63 +1,62 @@
 [
-    {
-      "username": "Brian Kernighan",
-      "email": "bkernighan@teachtogether.edu",
-      "password": "password01",
-      "isTeacher": true
-    },
-    {
-      "username": "Max Kanat-Alexander",
-      "email": "mkanatalexander@teachtogether.edu",
-      "password": "password02",
-      "isTeacher": false
-    },
-    {
-      "username": "Why The Lucky Stiff",
-      "email": "wtls@teachtogether.edu",
-      "password": "password03",
-      "isTeacher": true
-    },
-    {
-      "username": "Kent Beck",
-      "email": "kbeck@teachtogether.edu",
-      "password": "password04",
-      "isTeacher": false
-    },
-    {
-      "username": "Edward V. Berard",
-      "email": "evberard@teachtogether.edu",
-      "password": "password05",
-      "isTeacher": true
-    },
-    {
-      "username": "Alan Kay",
-      "email": "akay@teachtogether.edu",
-      "password": "password06",
-      "isTeacher": false
-    },
-    {
-      "username": "C.A.R. Hoare",
-      "email": "choare@teachtogether.edu",
-      "password": "password07",
-      "isTeacher": true
-    },
-    {
-      "username": "David Thomas",
-      "email": "dthomas@teachtogether.edu",
-      "password": "password08",
-      "isTeacher": false
-    },
-    {
-      "username": "Donald Knuth",
-      "email": "dknuth@teachtogether.edu",
-      "password": "password09",
-      "isTeacher": true
-    },
-    {
-      "username": "Lernantino",
-      "email": "lernantino@teachtogether.edu",
-      "password": "password10",
-      "isTeacher": false
-    }
-  ]
-  
+  {
+    "username": "Alice Johnson",
+    "email": "ajohnson@teachtogether.com",
+    "password": "password01",
+    "isTeacher": true
+  },
+  {
+    "username": "Bob Smith",
+    "email": "bsmith@teachtogether.com",
+    "password": "password02",
+    "isTeacher": false
+  },
+  {
+    "username": "Charlie Brown",
+    "email": "cbrown@teachtogether.com",
+    "password": "password03",
+    "isTeacher": true
+  },
+  {
+    "username": "David Miller",
+    "email": "dmiller@teachtogether.com",
+    "password": "password04",
+    "isTeacher": false
+  },
+  {
+    "username": "Ella Davis",
+    "email": "edavis@teachtogether.com",
+    "password": "password05",
+    "isTeacher": true
+  },
+  {
+    "username": "Frank Johnson",
+    "email": "fjohnson@teachtogether.com",
+    "password": "password06",
+    "isTeacher": false
+  },
+  {
+    "username": "Grace Lee",
+    "email": "glee@teachtogether.com",
+    "password": "password07",
+    "isTeacher": true
+  },
+  {
+    "username": "Henry Clark",
+    "email": "hclark@teachtogether.com",
+    "password": "password08",
+    "isTeacher": false
+  },
+  {
+    "username": "Ivy Wilson",
+    "email": "iwilson@teachtogether.com",
+    "password": "password09",
+    "isTeacher": true
+  },
+  {
+    "username": "Jack Davis",
+    "email": "jdavis@teachtogether.com",
+    "password": "password10",
+    "isTeacher": false
+  }
+]

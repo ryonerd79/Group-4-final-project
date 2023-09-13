@@ -23,7 +23,12 @@ const userSchema = new Schema({
     type: Boolean,
     required: true,
   },
-
+  announcements: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Announcement',
+    },
+  ],
 });
 
 userSchema.pre('save', async function (next) {
