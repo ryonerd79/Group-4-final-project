@@ -22,6 +22,9 @@ code {
   color:black;
 }
 
+header {
+  background-color: rgba(255, 255, 255, 0.4);
+}
 .header {
   display: flex;
   justify-content: center;
@@ -37,15 +40,28 @@ code {
   text-align: center;
 }
 
+.nav-item .nav-link.active {
+  border-top: 2px solid deepskyblue !important;
+}
+
+.nav-link:hover {
+  outline:none !important;
+}
+
+.nav.nav-tabs {
+  border: none; 
+}
+
 .nav-item {
-  margin-bottom: 10px;
-  padding: 20px;
+  border-top: 0.2rem solid transparent;
+  transition: border-top-color 0.2s;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: .5rem;
 }
 
 .nav-item:hover {
-  background-color: whitesmoke;
-  padding: 20px;
-  border-radius: 15px;
+  border-top-color:  deepskyblue;
 }
 
 @media (min-width: 800px) {
@@ -65,7 +81,7 @@ code {
 #loginId.active,
 #homeId.active,
 #logoutId.active {
-  text-decoration: underline deepskyblue solid 5px;
+  text-decoration: underline deepskyblue solid 5px !important;
 }
 
 body {
@@ -83,8 +99,9 @@ body {
   display: block;
 }
 
-header, footer {
+footer {
   background-color: deepskyblue;
+  height: 8rem;
 }
 
 .announcement-bg {
