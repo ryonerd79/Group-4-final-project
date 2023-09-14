@@ -13,7 +13,7 @@ const CommentList = ({ comments = [] }) => {
       >
         Comments
       </h3>
-      <div className="flex-row my-4">
+      <div className="d-flex flex-row my-4">
         {comments &&
           comments.map((comment) => (
             <div key={comment._id} className="col-12 mb-3 pb-3">
@@ -30,6 +30,7 @@ const CommentList = ({ comments = [] }) => {
           ))}
       </div>
     </>
+
   );
 };
 

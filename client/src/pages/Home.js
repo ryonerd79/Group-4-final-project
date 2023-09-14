@@ -11,21 +11,19 @@ const Home = () => {
   const announcements = data?.announcements || [];
 
   return (
-    <main>
-      <div className="flex-row justify-center">
-        <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
-        >
+    <main className="d-flex justify-content-center align-items-center mt-5">
+      <div>
+        <div className="border border-dark border-3 mb-3 p-3">
           <AnnouncementForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+        <div className="m-5">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <AnnouncementList
               announcements={announcements}
               title="Recent Announcements, Ideas, Questions, and/or Concerns..."
+              className="mt-5"
             />
           )}
         </div>

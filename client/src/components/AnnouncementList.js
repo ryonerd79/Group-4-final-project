@@ -13,14 +13,14 @@ const AnnouncementList = ({
 
   return (
     <div>
-      {showTitle && <h3>{title}</h3>}
+      {showTitle && <h3 className="mb-5">{title}</h3>}
       {announcements &&
         announcements.map((announcement) => (
-          <div key={announcement._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+          <div key={announcement._id} className="card mb-3 border border-2 border-dark">
+            <h4 className="card-header announcement-bg text-light p-2 m-0">
               {showUsername ? (
                 <Link
-                  className="text-light"
+                  className="text-dark text-decoration-none"
                   to={`/profiles/${announcement.announcementAuthor}`}
                 >
                   {announcement.announcementAuthor} <br />
@@ -36,18 +36,19 @@ const AnnouncementList = ({
                 </>
               )}
             </h4>
-            <div className="card-body bg-light p-2">
-              <p>{announcement.announcementText}</p>
+            <div className="card-body bg-light p-4">
+              <p className="fs-3">{announcement.announcementText}</p>
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-secondary btn-block rounded-0 fs-5 text-decoration-none"
               to={`/announcements/${announcement._id}`}
             >
-              Join the discussion on this announcement.
+              Comment
             </Link>
           </div>
         ))}
     </div>
+
   );
 };
 

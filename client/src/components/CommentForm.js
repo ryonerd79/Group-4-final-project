@@ -41,20 +41,20 @@ const CommentForm = ({ announcementId }) => {
 
   return (
     <div>
-      <h4>Do you have any feedback for this announcement?</h4>
+      <h4>Give some feedback?</h4>
 
       {Auth.loggedIn() ? (
         <>
           <p
             className={`m-0 ${
-              characterCount === 300 || error ? 'text-danger' : ''
+              characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}
           </p>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="d-flex flex-row justify-content-center justify-content-md-between align-items-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
@@ -62,7 +62,7 @@ const CommentForm = ({ announcementId }) => {
                 name="commentText"
                 placeholder="Add your comment..."
                 value={commentText}
-                className="form-input w-100"
+                className="form-control w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
@@ -78,10 +78,18 @@ const CommentForm = ({ announcementId }) => {
       ) : (
         <p>
           You need to be logged in to comment. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login" className="btn btn-link">
+            login
+          </Link>{' '}
+          or{' '}
+          <Link to="/signup" className="btn btn-link">
+            signup
+          </Link>
+          .
         </p>
       )}
     </div>
+
   );
 };
 
