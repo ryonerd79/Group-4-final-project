@@ -48,7 +48,6 @@ const AnnouncementList = ({
           </div>
         ))}
     </div>
-
   );
 };
 

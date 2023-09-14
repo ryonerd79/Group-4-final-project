@@ -54,7 +54,7 @@ const AnnouncementForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'announcementText' && value.length <= 300) {
+    if (name === 'announcementText' && value.length <= 350) {
       setAnnouncementText(value);
       setCharacterCount(value.length);
     }
@@ -68,10 +68,10 @@ const AnnouncementForm = () => {
         <>
           <p
             className={`m-0 ${
-              characterCount === 300 || error ? 'text-danger' : ''
+              characterCount === 350 || error ? 'text-danger' : ''
             }`}
           >
-            Character Count: {characterCount}/300
+            Character Count: {characterCount}/350
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
@@ -80,7 +80,7 @@ const AnnouncementForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="announcementText"
-                placeholder="Here's a new announcement or idea..."
+                placeholder="Create some discourse..."
                 value={announcementText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
