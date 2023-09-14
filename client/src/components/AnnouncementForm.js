@@ -41,7 +41,7 @@ const AnnouncementForm = () => {
       const { data } = await addAnnouncement({
         variables: {
           announcementText,
-          thoughtAuthor: Auth.getProfile().data.username,
+          announcementAuthor: Auth.getProfile().data.username,
         },
       });
 
@@ -62,7 +62,7 @@ const AnnouncementForm = () => {
 
   return (
     <div>
-      <h3>How would like to help us teach together today?</h3>
+      <h3>Communication will help us teach together!</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -89,7 +89,7 @@ const AnnouncementForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-success btn-block py-3" type="submit">
                 Add Announcement
               </button>
             </div>
@@ -102,7 +102,7 @@ const AnnouncementForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share an announcement. Please{' '}
+          You need to be logged in to share information. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

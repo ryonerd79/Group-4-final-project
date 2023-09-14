@@ -8,14 +8,15 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+  
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+    <header className="text-dark mb-4 py-3">
+      <div className="container d-flex flex-row justify-content-between align-items-center">
         <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">TeachTogether</h1>
+          <Link className="text-dark text-decoration-none" to="/">
+            <h1>TeachTogether</h1>
           </Link>
-          <p className="m-0">Let's work together to help these young, bright mids grow!</p>
+          <p className="mb-0 fst-italic">Growing Young Minds, Hand in Hand!</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
@@ -41,6 +42,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;

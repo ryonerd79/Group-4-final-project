@@ -1,3 +1,5 @@
+import './normalize.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -69,7 +71,7 @@ function App() {
                 element={<SingleAnnouncement />}
               />
             </Routes>
-          </div>
+          </div >
           <Footer />
         </div>
       </Router>
