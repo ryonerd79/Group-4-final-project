@@ -68,9 +68,7 @@ pre {
 /**
  * Remove the gray background on active links in IE 10.
  */
-a {
-  background-color: transparent;
-}
+
 
 /**
  * 1. Remove the bottom border in Chrome 57-
@@ -430,6 +428,7 @@ a {
 a:hover {
   color: #065b83;
   text-decoration: underline;
+  outline: none;
 }
 
 /* HEIGHT / WIDTH UTILS */
@@ -987,9 +986,6 @@ a:hover {
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.btn:hover {
-  background-color: #cecece;
-}
 
 .btn.btn-squared {
   border-radius: 0;
