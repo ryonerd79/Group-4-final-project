@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
-import Navigation from './Nav'; // Import the Navigation component
+import Navigation from './Nav';
 
-const Header = ({ currentPage, handlePageChange }) => { // Pass currentPage and handlePageChange as props
+const Header = ( ) => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
   
   return (
-    <header className="text-dark mb-4 py-3 border border-bottom border-1 border-dark">
+    <header className="header-background text-dark mb-4 py-3 border border-bottom border-1 border-dark">
       <div className="container d-flex flex-row justify-content-between align-items-center">
         <div>
           <Link className="text-dark text-decoration-none" to="/">
@@ -22,8 +22,6 @@ const Header = ({ currentPage, handlePageChange }) => { // Pass currentPage and 
           {Auth.loggedIn() ? (
             <>
               <Navigation
-                currentPage={currentPage}
-                handlePageChange={handlePageChange}
               />
               <Link className="btn btn-sm btn-secondary text-decoration-none m-2" to="/me">
                 {Auth.getProfile().data.username}'s Profile
@@ -34,8 +32,6 @@ const Header = ({ currentPage, handlePageChange }) => { // Pass currentPage and 
             </>
           ) : (
             <Navigation
-              currentPage={currentPage}
-              handlePageChange={handlePageChange}
             />
           )}
         </div>

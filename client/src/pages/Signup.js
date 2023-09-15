@@ -61,6 +61,18 @@ const Signup = () => {
                 </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                 <div className="form-group is-teacher-checkbox">
+                <label className="is-teacher-checkbox">
+                Indicate if you're a teacher by checking the box: <span></span>
+                <input
+                    className="form-checkbox"
+                    name="isTeacher"
+                    type="checkbox"
+                    checked={formState.isTeacher}
+                    onChange={handleChange}
+                  />
+                </label>
+                </div>
                 <div className="form-group">
                   <input
                     className="form-input"
@@ -91,18 +103,7 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group is-teacher-checkbox">
-                <label className="is-teacher-checkbox">
-                Indicate if you're a teacher by checking the box:
-                <input
-                    className="form-checkbox"
-                    name="isTeacher"
-                    type="checkbox"
-                    checked={formState.isTeacher}
-                    onChange={handleChange}
-                  />
-                </label>
-                </div>
+               
                 <button
                   className="form-submit-button"
                   style={{ cursor: 'pointer' }}
