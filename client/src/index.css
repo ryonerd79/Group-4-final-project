@@ -107,3 +107,7 @@ footer {
 .announcement-bg {
   background-color: deepskyblue !important;
 }
+
+.header-background {
+  background: whitesmoke;
+}
