@@ -9,7 +9,6 @@ import Auth from '../utils/auth';
 
 const AnnouncementForm = () => {
   const [announcementText, setAnnouncementText] = useState('');
-
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addAnnouncement, { error }] = useMutation(ADD_ANNOUNCEMENT, {
@@ -25,11 +24,17 @@ const AnnouncementForm = () => {
         console.error(e);
       }
 
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
+      // Update me object's cache with optional chaining and default value
+      const { me } = cache.readQuery({ query: QUERY_ME }) || { me: { announcements: [] } };
+
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, announcements: [...me.announcements, addAnnouncement] } },
+        data: {
+          me: {
+            ...me,
+            announcements: [...(me?.announcements || []), addAnnouncement],
+          },
+        },
       });
     },
   });
