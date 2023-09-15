@@ -78,11 +78,11 @@ const CommentForm = ({ announcementId }) => {
       ) : (
         <p>
           You need to be logged in to comment. Please{' '}
-          <Link to="/login" className="btn btn-link">
+          <Link to="/login" className="btn btn-log">
             login
           </Link>{' '}
           or{' '}
-          <Link to="/signup" className="btn btn-link">
+          <Link to="/signup" className="btn btn-log">
             signup
           </Link>
           .

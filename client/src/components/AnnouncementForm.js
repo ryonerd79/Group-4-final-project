@@ -89,7 +89,7 @@ const AnnouncementForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-success btn-block py-3" type="submit">
+              <button className="btn btn-success btn-outline-light btn-block py-3" type="submit">
                 Add Announcement
               </button>
             </div>
