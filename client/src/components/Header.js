@@ -1,42 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Auth from '../utils/auth';
+import Navigation from './Nav'; // Import the Navigation component
 
-const Header = () => {
+const Header = ({ currentPage, handlePageChange }) => { // Pass currentPage and handlePageChange as props
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
   
   return (
-    <header className="text-dark mb-4 py-3">
+    <header className="text-dark mb-4 py-3 border border-bottom border-1 border-dark">
       <div className="container d-flex flex-row justify-content-between align-items-center">
         <div>
           <Link className="text-dark text-decoration-none" to="/">
-            <h1>TeachTogether</h1>
+            <h1 className='fw-bold'>TeachTogether</h1>
           </Link>
           <p className="mb-0 fst-italic">Growing Young Minds, Hand in Hand!</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
-                {Auth.getProfile().data.username}'s profile
+              <Navigation
+                currentPage={currentPage}
+                handlePageChange={handlePageChange}
+              />
+              <Link className="btn btn-sm btn-secondary text-decoration-none m-2" to="/me">
+                {Auth.getProfile().data.username}'s Profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button className="btn btn-sm btn-danger m-2" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
-                Login
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
-              </Link>
-            </>
+            <Navigation
+              currentPage={currentPage}
+              handlePageChange={handlePageChange}
+            />
           )}
         </div>
       </div>

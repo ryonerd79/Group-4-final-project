@@ -8,6 +8,10 @@ module.exports = {
     let token = req.body.token || req.query.token || req.headers.authorization;
     token = token.replace('Bearer ', '')
 
+    if (req.headers.authorization) {
+      token = token.split(' ').pop().trim();
+    }
+    
     if (!token) {
       return req;
     }

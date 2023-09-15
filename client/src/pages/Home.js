@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main className="d-flex justify-content-center align-items-center mt-5">
       <div>
-        <div className="border border-dark border-3 mb-3 p-3">
+        <div className="border border-dark border-3 mb-3 p-3 bg-light-subtle">
           <AnnouncementForm />
         </div>
         <div className="m-5">

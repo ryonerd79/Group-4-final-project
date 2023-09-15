@@ -9,6 +9,7 @@ export const QUERY_USER = gql`
       announcements {
         _id
         announcementText
+        announcementAuthor
         createdAt
       }
     }

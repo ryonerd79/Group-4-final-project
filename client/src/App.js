@@ -4,6 +4,7 @@ import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Auth from './utils/auth';
 
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -12,7 +13,8 @@ import SingleAnnouncement from './pages/SingleAnnouncement';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import About from './pages/About';
+import Contact from './pages/Contact'
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -58,6 +60,13 @@ function App() {
                 path="/signup" 
                 element={<Signup />}
               />
+              <Route 
+                path="/about" 
+                element={<About />}
+              />
+              {Auth.loggedIn() ? (
+                <Route path="/contact" element={<Contact />} />
+              ) : null}
               <Route 
                 path="/me" 
                 element={<Profile />}
