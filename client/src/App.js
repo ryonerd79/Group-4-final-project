@@ -19,6 +19,7 @@ import Parents from './pages/Parents';
 import Teachers from './pages/Teachers';
 import { useState, useEffect } from 'react';
 
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
