@@ -1,56 +1,37 @@
-import React, { useState } from 'react';
-import { useMutation, useQuery } from '@apollo/client';
-import { CREATE_POST , GET_ALL_POSTS } from '../utils/queries'
+import React from 'react';
+import { useQuery } from '@apollo/client';
+
+import AnnouncementList from '../components/AnnouncementList';
+import AnnouncementForm from '../components/AnnouncementForm';
+
+import { QUERY_ANNOUNCEMENTS } from '../utils/queries';
 
 const Home = () => {
-    const [postContent, setPostContent] = useState('');
+  const { loading, data } = useQuery(QUERY_ANNOUNCEMENTS);
+  const announcements = data?.announcements || [];
 
-    const { loading, data} = useQuery(GET_ALL_POSTS);
-    const [createPost] = useMutation(CREATE_POST);
-
-    const handlePostSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            await createPost({
-                variables: { content: postContent },
-            });
-
-            setPostContent('');
-        } catch (error) {
-            console.error(error)
-        }
-    };
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    const { posts } = data;
-
-    return (
-        <div>
-            <div className='post-form'>
-                <h2>Create a New Post</h2>
-                <form onSubmit={handlePostSubmit}>
-                    <textarea
-                    placeholder='What do you want to say?...'
-                    value={postContent}
-                    onChange={(e) => setPostContent(e.target.value)}
-                    ></textarea>
-                    <button type='submit'>Submit Post</button>
-                </form>
-            </div>
-
-            <div className='posts'>
-                <h2>All Posts</h2>
-                {posts.map((post) => (
-                    <div key = {post.id} className='post'>
-                        <p>{post.content}</p>
-                    </div>
-                ))}
-            </div>
+  return (
+    <main className="d-flex justify-content-center align-items-center mt-5">
+      <div>
+        <div className="border border-dark border-3 mb-3 p-3 bg-light-subtle">
+          <AnnouncementForm />
+          <p>Teacher</p>
         </div>
-    );
-}
+        <div className="m-5">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <AnnouncementList
+              announcements={announcements}
+              title="Recent Announcements, Ideas, Questions, and/or Concerns..."
+              className="mt-5"
+            />
+          )}
+        </div>
+      </div>
+    </main>
+  );
+};
 
 export default Home;
+  
