@@ -26,6 +26,10 @@ const Login = (props) => {
         variables: { ...formState },
       });
 
+      const userType = data.login.userType;
+      
+      localStorage.setItem('userType', userType);
+
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);

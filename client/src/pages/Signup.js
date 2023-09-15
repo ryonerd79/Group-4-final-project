@@ -38,6 +38,10 @@ const Signup = () => {
         variables: { ...formState },
       });
 
+      const userType = formState.isTeacher ? 'teacher' : 'parent';
+
+      localStorage.setItem('userType', userType);
+
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);

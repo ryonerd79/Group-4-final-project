@@ -15,6 +15,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact'
+import Parents from './pages/Parents';
+import Teachers from './pages/Teachers';
+import { useState, useEffect } from 'react';
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -41,6 +45,15 @@ const client = new ApolloClient({
 
 
 function App() {
+  const [userType, setUserType] = useState('');
+
+  useEffect(() => {
+    const userTypeFromStorage = localStorage.getItem('userType');
+    if (userTypeFromStorage) {
+      setUserType(userTypeFromStorage);
+      console.log(userTypeFromStorage);
+    }
+  }, []);
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -48,10 +61,15 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
-              <Route 
+              {userType === 'teacher' ? (
+                <Route
                 path="/"
-                element={<Home />}
-              />
+                element={<Teachers/>} />
+              ):(
+                <Route
+                path="/"
+                element={<Parents />} />
+              )};
               <Route 
                 path="/login" 
                 element={<Login />}
