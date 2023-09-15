@@ -70,6 +70,7 @@ const Signup = () => {
                     type="checkbox"
                     checked={formState.isTeacher}
                     onChange={handleChange}
+                    style={{ width: '20px', height: '20px' }}
                   />
                 </label>
                 </div>
