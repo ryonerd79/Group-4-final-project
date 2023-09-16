@@ -108,7 +108,9 @@ const AnnouncementForm = () => {
       ) : (
         <p>
           You need to be logged in to share information. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link className="btn btn-outline-dark btn-log mx-2"to="/login">Login</Link>
+           or 
+          <Link className="btn btn-outline-dark btn-log mx-2" to="/signup">Signup.</Link>
         </p>
       )}
     </div>

@@ -23,12 +23,9 @@ const Header = ( ) => {
             <>
               <Navigation
               />
-              <Link className="btn btn-sm btn-secondary text-decoration-none m-2" to="/me">
+              <Link className="btn btn-sm btn-log btn-outline-dark text-decoration-none ms-4 mt-4" to="/me">
                 {Auth.getProfile().data.username}'s Profile
               </Link>
-              <button className="btn btn-sm btn-danger m-2" onClick={logout}>
-                Logout
-              </button>
             </>
           ) : (
             <Navigation

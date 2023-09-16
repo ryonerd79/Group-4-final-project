@@ -104,10 +104,11 @@ footer {
   height: 8rem;
 }
 
-.announcement-bg {
+.announcement-bg, .btn-log {
   background-color: deepskyblue !important;
 }
 
 .header-background {
   background: whitesmoke;
 }
+

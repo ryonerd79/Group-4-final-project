@@ -6,12 +6,14 @@ import contact from '../assets/contact.png';
 import signup from '../assets/signup.png';
 import login from '../assets/login.png';
 import logoutImg from '../assets/logout.png';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navigation() {
+  const navigate = useNavigate();
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    navigate('/');
   };
 
   const location = useLocation();

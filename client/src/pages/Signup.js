@@ -106,7 +106,7 @@ const Signup = () => {
                 </div>
                
                 <button
-                  className="form-submit-button"
+                  className="form-submit-button btn btn-outline-dark btn-log"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
