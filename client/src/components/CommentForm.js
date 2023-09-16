@@ -47,7 +47,7 @@ const CommentForm = ({ announcementId }) => {
         <>
           <p
             className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
+              characterCount === 350 || error ? 'text-danger' : ''
             }`}
           >
             Character Count: {characterCount}/280
@@ -62,14 +62,14 @@ const CommentForm = ({ announcementId }) => {
                 name="commentText"
                 placeholder="Add your comment..."
                 value={commentText}
-                className="form-control w-100"
+                className="form-control w-100 border border-dark border-1 mt-3 py-3"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-success btn-block mt-3 py-3" type="submit">
                 Add Comment
               </button>
             </div>
