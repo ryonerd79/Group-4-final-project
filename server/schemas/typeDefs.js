@@ -30,21 +30,6 @@ const typeDefs = gql`
     createdAt: String
   }
 
-  type GradeBook {
-    _id: ID
-    studentName: String!
-    grade: Float!
-  }
-
-  extend type User {
-    gradeBook: [Gradebook]
-  }
-
-  type Query {
-    getGradeBook: [GradeBook]
-  }
-
-
   type Query {
     users: [User]
     user(username: String!): User
