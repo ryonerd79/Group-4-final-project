@@ -43,3 +43,5 @@
 //   const Post = model('Post', PostSchema);
   
 //   module.exports = Post;
+
+//This Post.js under models is intented to be used to help with the rendering of Posts between Parents and Teachers one on one.
