@@ -44,6 +44,7 @@ The last option is loggin out.
 
 
 ## Creators
+
 Luke Denhartog
 - [LinkedIn](https://www.linkedin.com/in/luke-denhartog-113123261/)
 - [GitHub](https://github.com/Afrozez)
@@ -69,12 +70,14 @@ Jake Norris
 ## Features
 
 #### Current
+
 - Accounts for both parents and teachers
 - Ability to read and create posts
 - Ability to react to posts
 - View profile for all posts made by user
 
 #### Future
+
 - Student accounts
 - Link students with their parents and teachers
 - Allow parents to contact students teacher directly and view grades
@@ -84,5 +87,4 @@ Jake Norris
 
 Challenges
 
-
-https://docs.google.com/presentation/d/1oxahjfxgY_q1jm8Wqvf6V24UfPIWqaZy_eTHdaByvcw/edit#slide=id.p
+<https://docs.google.com/presentation/d/1oxahjfxgY_q1jm8Wqvf6V24UfPIWqaZy_eTHdaByvcw/edit#slide=id.p>
