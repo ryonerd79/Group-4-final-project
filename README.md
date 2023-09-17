@@ -82,3 +82,7 @@ Jake Norris
 - Student to view grades and message teachers
 - Direct messaging
 
+Challenges
+
+
+https://docs.google.com/presentation/d/1oxahjfxgY_q1jm8Wqvf6V24UfPIWqaZy_eTHdaByvcw/edit#slide=id.p
