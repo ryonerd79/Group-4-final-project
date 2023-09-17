@@ -17,6 +17,7 @@ import About from './pages/About';
 import Contact from './pages/Contact'
 import Parents from './pages/Parents';
 import Teachers from './pages/Teachers';
+import Gradebook from './pages/Gradebook';
 import { useState, useEffect } from 'react';
 
 
@@ -97,6 +98,10 @@ function App() {
               <Route 
                 path="/announcements/:announcementId" 
                 element={<SingleAnnouncement />}
+              />
+              <Route 
+                path="/gradebook"
+                element={<Gradebook/>}
               />
             </Routes>
           </div >
