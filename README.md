@@ -53,7 +53,7 @@ Doug Soda
 - [GitHub](https://github.com/dsoda86)
 
 Daniel Roh
-- [LinkedIn]
+- [LinkedIn](https://www.linkedin.com/in/daniel-roh-37a612123/)
 - [GitHub](https://github.com/ryonerd79)
 
 Jake Norris

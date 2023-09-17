@@ -48,8 +48,8 @@ const Login = (props) => {
           <h4 className="login-text">Login</h4>
           <div className="form-group">
             {data ? (
-              <p>Success! You are now signed in! You may now head{' '}
-              <Link to="/">back to the homepage.</Link>
+              <p>Login Successful! You will be redirected shortly or click {' '}
+              <Link className="btn btn-outline-dark btn-log mx-2" to="/">Home</Link> to go back to the homepage.
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -70,7 +70,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="form-submit-button"
+                  className="form-submit-button btn btn-outline-dark btn-log"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >

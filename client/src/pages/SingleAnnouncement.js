@@ -25,30 +25,30 @@ const SingleAnnouncement = () => {
   }
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {announcement.announcementAuthor} <br />
-        <span style={{ fontSize: '1rem' }}>
-          had this announcement on {announcement.createdAt}
-        </span>
-      </h3>
-      <div className="bg-light py-4">
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
-          }}
-        >
-          {announcement.announcementText}
-        </blockquote>
+      <div className='border border-dark border-2'>
+        <h3 className="card-header announcement-bg text-dark p-2 m-0">
+          {announcement.announcementAuthor} <br />
+          <span style={{ fontSize: '1rem' }}>
+            had this announcement on {announcement.createdAt}
+          </span>
+        </h3>
+        <div className="bg-light-subtle border-top border-dark py-4">
+          <blockquote
+            className="p-4"
+            style={{
+              fontSize: '1.5rem',
+              lineHeight: '1.5',
+            }}
+          >
+            {announcement.announcementText}
+          </blockquote>
+        </div>
       </div>
 
       <div className="my-5">
         <CommentList comments={announcement.comments} />
       </div>
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      <div className="m-3 p-4 border border-2 border-dark bg-light-subtle">
         <CommentForm announcementId={announcement._id} />
       </div>
     </div>

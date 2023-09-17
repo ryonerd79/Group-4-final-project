@@ -13,7 +13,7 @@ const AnnouncementList = ({
 
   return (
     <div>
-      {showTitle && <h3 className="mb-5">{title}</h3>}
+      {showTitle && <h3 className="mb-5 text-center border border-light border-3 p-3 text-light bg-dark">{title}</h3>}
       {announcements &&
         announcements.map((announcement) => (
           <div key={announcement._id} className="card mb-3 border border-2 border-dark">
@@ -36,7 +36,7 @@ const AnnouncementList = ({
                 </>
               )}
             </h4>
-            <div className="card-body bg-light p-4">
+            <div className="card-body bg-light border-top border-bottom border-black p-4">
               <p className="fs-3">{announcement.announcementText}</p>
             </div>
             <Link

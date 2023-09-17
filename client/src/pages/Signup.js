@@ -70,6 +70,7 @@ const Signup = () => {
                     type="checkbox"
                     checked={formState.isTeacher}
                     onChange={handleChange}
+                    style={{ width: '20px', height: '20px' }}
                   />
                 </label>
                 </div>
@@ -105,7 +106,7 @@ const Signup = () => {
                 </div>
                
                 <button
-                  className="form-submit-button"
+                  className="form-submit-button btn btn-outline-dark btn-log"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
