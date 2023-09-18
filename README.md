@@ -1,12 +1,6 @@
 
 # Teach Together
 
-* ADD BEFORE SUBMITT!!!!
-- daniel linked in
-- link to heroku
-- link to slides
-- more features
-
 ## Description
 
 We at the Teach Together team sought out to create an app to help solve an issue of communication between teachers and parents. Using our app teachers and parents can communicate back an forth and work together for the success of the students
