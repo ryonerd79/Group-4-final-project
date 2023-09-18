@@ -15,7 +15,7 @@ const Home = () => {
       <div>
         <div className="border border-dark border-3 mb-3 p-3 bg-light-subtle">
           <AnnouncementForm />
-          <p>Teacher</p>
+          <p>Welcome Teacher!</p>
         </div>
         <div className="m-5">
           {loading ? (
