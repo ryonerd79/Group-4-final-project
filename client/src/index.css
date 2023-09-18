@@ -117,3 +117,8 @@ footer {
   max-width: 18rem;
   height: auto;
 }
+
+.form-border {
+  border: solid .5rem deepskyblue !important;
+  border-radius: .8rem;
+}
