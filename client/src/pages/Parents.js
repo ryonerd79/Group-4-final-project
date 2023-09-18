@@ -15,7 +15,7 @@ const Home = () => {
       <div>
         <div className="border border-dark border-3 mb-3 p-3 bg-light-subtle">
           <AnnouncementForm />
-          <p> This is a parent</p>
+          <p> Welcome Parent!</p>
         </div>
         <div className="m-5">
           {loading ? (
@@ -26,7 +26,9 @@ const Home = () => {
               title="Recent Announcements, Ideas, Questions, and/or Concerns..."
               className="mt-5"
             />
+            
           )}
+          <p>Teacher</p>
         </div>
       </div>
     </main>
