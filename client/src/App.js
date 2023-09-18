@@ -6,7 +6,6 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Auth from './utils/auth';
 
-import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SingleAnnouncement from './pages/SingleAnnouncement';
@@ -17,6 +16,7 @@ import About from './pages/About';
 import Contact from './pages/Contact'
 import Parents from './pages/Parents';
 import Teachers from './pages/Teachers';
+import Gradebook from './pages/Gradebook';
 import { useState, useEffect } from 'react';
 
 
@@ -97,6 +97,10 @@ function App() {
               <Route 
                 path="/announcements/:announcementId" 
                 element={<SingleAnnouncement />}
+              />
+              <Route 
+                path="/gradebook"
+                element={<Gradebook/>}
               />
             </Routes>
           </div >

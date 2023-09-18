@@ -30,7 +30,6 @@ const typeDefs = gql`
     createdAt: String
   }
 
-
   type Query {
     users: [User]
     user(username: String!): User
