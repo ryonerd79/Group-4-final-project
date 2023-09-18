@@ -32,7 +32,7 @@ They can also travel to our about and contact pages to learn more about us and r
 The last option is loggin out.
 
 
-![Home Screen](client\src\assets\SShome.png)
+![Home Screen](client/src/assets/SShome.png)
 
 ![Sign Up](client/src/assets/SSsignup.png)
 
