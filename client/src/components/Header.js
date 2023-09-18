@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 import Navigation from './Nav';
+import HeaderLogo from "../assets/HeaderLogo.jpeg"
 
 const Header = ( ) => {
   const logout = (event) => {
@@ -14,7 +15,7 @@ const Header = ( ) => {
       <div className="container d-flex flex-row justify-content-between align-items-center">
         <div>
           <Link className="text-dark text-decoration-none" to="/">
-            <h1 className='fw-bold'>TeachTogether</h1>
+          <img src={HeaderLogo} className="card-img-top teach-together-logo me-5" alt="Header Logo" />
           </Link>
           <p className="mb-0 fst-italic">Growing Young Minds, Hand in Hand!</p>
         </div>
