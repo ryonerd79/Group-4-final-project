@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
 import TeachTogetherLogo from "../assets/TeachTogetherLogo.png"
+
 export default function About() {
   return (
     <div className="my-3">
@@ -39,7 +40,7 @@ export default function About() {
         </div>
         <Link
           className="btn btn-secondary btn-block rounded-0 fs-5 text-decoration-none"
-          to={`/stripeTip`}
+          to={`/stripe`}
         >
           Tip to Help Support the App
         </Link>
