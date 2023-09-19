@@ -17,6 +17,8 @@ import Contact from './pages/Contact'
 import Parents from './pages/Parents';
 import Teachers from './pages/Teachers';
 import Gradebook from './pages/Gradebook';
+import ComingSoon from './components/ComingSoon';
+
 import { useState, useEffect } from 'react';
 
 
@@ -101,6 +103,10 @@ function App() {
               <Route 
                 path="/gradebook"
                 element={<Gradebook/>}
+              />
+              <Route 
+                path="/coming-soon" 
+                element={<ComingSoon />} 
               />
             </Routes>
           </div >

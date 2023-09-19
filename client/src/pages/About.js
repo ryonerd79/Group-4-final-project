@@ -40,7 +40,7 @@ export default function About() {
         </div>
         <Link
           className="btn btn-secondary btn-block rounded-0 fs-5 text-decoration-none"
-          to={`/stripe`}
+          to="/coming-soon"
         >
           Tip to Help Support the App
         </Link>

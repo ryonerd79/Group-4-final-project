@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements, loadStripe } from '@stripe/react-stripe-js';
+require ("dotenv").config();
 
 // Replace with your actual publishable key
-const stripePromise = loadStripe('pk_test_51Nr7aaHn4n6n07LMGep8yhJw5BAqswNoIMAtHsAiTpyK92NHJU7ftjLBv9sLNyPGJosLcKSH6QSPlOC1170XfUtl00Ir6Qj082');
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
 
 const TipForm = () => {
   const [amount, setAmount] = useState(10); // Initial tip amount
